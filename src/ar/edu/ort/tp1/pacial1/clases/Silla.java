@@ -19,5 +19,11 @@ public class Silla extends Mueble {
 		return alto;
 	}
 
+	@Override
+	public float calcularPrecioCosto() {
+		// TODO Apéndice de método generado automáticamente
+		return 0;
+	}
+
 
 }

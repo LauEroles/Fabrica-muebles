@@ -31,9 +31,11 @@ public class Mesa extends Mueble {
 	public TipoMesa getTipoMesa() {
 		return tipoMesa;
 	}
+
 	@Override
-	public void mostrar(){
-		System.out.println(" Tipo de mueble: " + tipoMesa.ordinal() + calcularPrecioVenta());
-		
+	public float calcularPrecioCosto() {
+		// TODO Apéndice de método generado automáticamente
+		return 0;
 	}
+	
 }

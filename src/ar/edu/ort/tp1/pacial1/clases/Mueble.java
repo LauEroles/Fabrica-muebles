@@ -20,10 +20,14 @@ public abstract class Mueble implements Mostrable {
 		return porcentajeGanancia;
 	}
 
+	//TODO A completar
+	public abstract float calcularPrecioCosto();
+	
 	public float calcularPrecioVenta() {
+		float costo= calcularPrecioCosto();
 		
-		return costoBase;
-		//TODO A completar
+		return this.porcentajeGanancia * costo/100 +costo;
+		
 	
 	}
 
@@ -36,9 +40,12 @@ public abstract class Mueble implements Mostrable {
 		return modelo == this.modelo;
 	}
 	
+	
+	
+	
 	@Override
 	public void mostrar(){
-		System.out.println(toString());
+		System.out.println("Mueble tipo: " + getClass().getSimpleName() +  " - Modelo " + this.modelo  + " Precio Venta: " + calcularPrecioVenta());
 		
 	}
 

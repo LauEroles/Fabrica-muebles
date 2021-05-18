@@ -22,6 +22,12 @@ public class Sillon extends Mueble {
 		return telaSillon;
 	}
 
+	@Override
+	public float calcularPrecioCosto() {
+		// TODO Apéndice de método generado automáticamente
+		return 0;
+	}
+
 
 	
 }
