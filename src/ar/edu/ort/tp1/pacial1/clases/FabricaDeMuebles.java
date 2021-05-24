@@ -34,9 +34,42 @@ public class FabricaDeMuebles {
 	}
 
 	public boolean seHaFabricado(String modelo) {
-		boolean seHaFabricado = false;
+		boolean fabricado = false;
 		// TODO A completar
-		 
-		return seHaFabricado;
+
+		int i=0;
+		while(!fabricado && i<mueblesFabricados.size() ){
+			Mueble aux= mueblesFabricados.get(i);
+			if(aux.modeloCorrecto(modelo)){
+				fabricado=true;
+			}
+			else i++;
+		}
+		return fabricado;
+	}
+	
+	public void mostrar(){
+		System.out.println("Fabrica de muebles: " + nombre); 
+		int sillas=0;
+		int mesas=0;
+		int sillones=0;
+		float ventasTotales=0;
+		
+		for( Mueble mueble: mueblesFabricados){
+			if(mueble instanceof Silla){
+				sillas++;
+			}else if (mueble instanceof Mesa){
+				mesas++;
+			}else {
+				sillones++;
+			}
+			
+		ventasTotales+=mueble.calcularPrecioCosto();
+		}
+		System.out.println("Se han fabricado: " + sillas + " sillas "+ mesas+ " mesas " + sillones + " sillones "); 
+		System.out.println("La venta total fue :  "+ ventasTotales);
 	}
 }
+
+
+

@@ -21,6 +21,7 @@ public abstract class Mueble implements Mostrable {
 	}
 
 	//TODO A completar
+	
 	public abstract float calcularPrecioCosto();
 	
 	public float calcularPrecioVenta() {
@@ -36,12 +37,8 @@ public abstract class Mueble implements Mostrable {
 	}
 
 	public boolean modeloCorrecto(String modelo) {
-	
-		return modelo == this.modelo;
+		return this.modelo.equals(modelo);
 	}
-	
-	
-	
 	
 	@Override
 	public void mostrar(){

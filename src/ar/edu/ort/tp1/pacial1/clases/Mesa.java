@@ -2,7 +2,7 @@ package ar.edu.ort.tp1.pacial1.clases;
 
 public class Mesa extends Mueble {
 
-	private static final float COEFICIENTE_SUPERFICIE = 0.2f;
+	private final float COEFICIENTE_SUPERFICIE = 0.2f;
 	private long largo;
 	private long ancho;
 	private TipoMesa tipoMesa;
@@ -16,7 +16,7 @@ public class Mesa extends Mueble {
 	
 	}
 
-	public static float getCoeficienteSuperficie() {
+	public float getCoeficienteSuperficie() {
 		return COEFICIENTE_SUPERFICIE;
 	}
 
@@ -35,7 +35,15 @@ public class Mesa extends Mueble {
 	@Override
 	public float calcularPrecioCosto() {
 		// TODO Apéndice de método generado automáticamente
-		return 0;
+		//(costo base * multiplicador del tipo de mesa + 0.2 * largo * ancho)
+		float costoBase=super.getCostoBase();
+		float multiplicadorValor=this.getTipoMesa().getMultiplicadorValor();
+		
+		
+		return costoBase*multiplicadorValor+ this.getCoeficienteSuperficie() * this.getSuperficie();
 	}
 	
+	private float getSuperficie(){
+		return this.getLargo()*this.getAncho();
+	}
 }

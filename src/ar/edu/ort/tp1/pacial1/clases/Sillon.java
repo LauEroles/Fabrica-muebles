@@ -24,8 +24,12 @@ public class Sillon extends Mueble {
 
 	@Override
 	public float calcularPrecioCosto() {
+		//(costo base * cantidad de cuerpos *   adicional por tela)
 		// TODO Apéndice de método generado automáticamente
-		return 0;
+		float costoBase= super.getCostoBase();
+		
+		
+		return costoBase * this.cantCuerpos* this.getTelaSillon().getPorcentaje();
 	}
 
 
